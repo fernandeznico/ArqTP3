@@ -30,7 +30,7 @@ initial mem_reg[6] = (( HLT  << (data_size - 5) ) + 0  );
 integer pos;
 initial
 begin
-  for( pos = 7 ; pos < 2**addr_bus-1 ; pos++ )
+  for( pos = 7 ; pos < 2**addr_bus-1 ; pos = pos + 1 )
   begin
     mem_reg[pos] = 0;
   end
