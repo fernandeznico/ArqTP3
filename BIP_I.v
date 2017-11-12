@@ -1,3 +1,4 @@
+//--------------------------------------------------------------------72
 module BIP_I
   (
      input wire Reset , Clk
@@ -25,7 +26,7 @@ Decodificador_Instruccion
   Instruction_decoder ( .Opcode(PM_Data[15:11]) ,
                         .WrPC(ID_WrPC) , .SelB(ID_SelB) ,
                         .WrACC(ID_WrACC) , .Op(ID_Op) ,
-                        .WrRAM(ID_Wr_RAM), .RdRAM(ID_RdRAM) ,
+                        .WrRAM(ID_WrRAM), .RdRAM(ID_RdRAM) ,
                         .SelA(ID_SelA) );
 
 Data_Mem #( .addr_bus(11) ,
@@ -47,7 +48,7 @@ Selector2 #( .bits(16) )
 
 Store_a_Word #( .bits(16) )
   Accumulator ( .Reset(Reset) , .Clk(Clk) , .Enable(ID_WrACC) ,
-                .Input(Sig_Ext) , .Word(ACC) );
+                .Input(SelA) , .Word(ACC) );
 
 Alu #( .bits(16) )
   ALU ( .A(ACC) , .B(SelB) , .O(ID_Op) , .R(Alu_R) );
