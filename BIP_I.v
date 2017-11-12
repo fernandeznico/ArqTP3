@@ -4,7 +4,7 @@ module BIP_I
   );
 
 // Conections (Nodes)
-wire ID_WrPC , ID_SelB , ID_WrAcc , ID_Op , ID_WrRam , ID_RdRam;
+wire ID_WrPC , ID_SelB , ID_WrACC , ID_Op , ID_WrRAM , ID_RdRAM;
 wire [1:0] ID_SelA;
 wire [10:0] PC , Const_One , Sum;
 wire [15:0] PM_Data , DM_Data , Sig_Ext , SelA , SelB , ACC , Alu_R;
